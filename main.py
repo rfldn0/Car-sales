@@ -34,12 +34,27 @@ def main():
    imp_cars = []
 
    try:
+       
        read_data(dom_cars, imp_cars, "carsInStock.txt")
        write_data(dom_cars, imp_cars, "carsCategoryWise.txt")
 
        #read the file from carsCategoryWise and present them on CLI
        display_cars(imp_cars, "Imported Cars: ")
        display_cars(dom_cars, "Domestic Cars: ")
+
+       #numbers 
+       print(f"Number of imported cars = {len(imp_cars)}")
+       print(f"Number of domestic cars = {len(dom_cars)}")
+       print(f"Total = {len(imp_cars) + len(dom_cars)}")
+
+       #add the cars from carsExpectedToArrive.txt file to the existing list
+       read_data(dom_cars, imp_cars, "carsExpectedToArrive.txt")
+
+       #display the new cars appended 
+       display_cars(imp_cars, "Imported Cars: ")
+       display_cars(dom_cars, "Domestic Cars: ")
+
+       """Note: this new appended cars have not yet been added to the carsCategoryWise.txt file"""
 
    except FileNotFoundError:
        print("File not found")
