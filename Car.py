@@ -38,4 +38,4 @@ class Car:
         self.type = type
 
     def print_info(self):
-        pass
+        return f"{self.make} {self.model} {self.year} {self.price} {self.type}"
