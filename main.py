@@ -1,21 +1,6 @@
 from ImportCar import import_car as i_car
 from DomesticCar import domestic_car as d_car
 
-def main():
-   dom_cars = []
-   imp_cars = []
-
-   try:
-       read_data(dom_cars, imp_cars, "carsInStock.txt")
-       write_data(dom_cars, imp_cars, "carsCategoryWise.txt")
-
-       #read the file from carsCategoryWise and present them on CLI
-       display_cars(imp_cars, "Imported Cars: ")
-       display_cars(dom_cars, "Domestic Cars: ")
-
-   except FileNotFoundError:
-       print("File not found")
-
 def display_cars(cars_category, title): 
     print(title)
     print("=" * 60)
@@ -41,6 +26,25 @@ def write_data(domestic, imports, filename):
         file.write("\nDomestic Cars: \n")
         for car in domestic:
             file.write(f"{car.print_info()} \n")
+
+
+
+def main():
+   dom_cars = []
+   imp_cars = []
+
+   try:
+       read_data(dom_cars, imp_cars, "carsInStock.txt")
+       write_data(dom_cars, imp_cars, "carsCategoryWise.txt")
+
+       #read the file from carsCategoryWise and present them on CLI
+       display_cars(imp_cars, "Imported Cars: ")
+       display_cars(dom_cars, "Domestic Cars: ")
+
+   except FileNotFoundError:
+       print("File not found")
+
+
 
 
 
