@@ -1,41 +1,41 @@
 
 class Car:
     def __init__(self, brand, model, year, price, type):
-        self.brand = brand
-        self.model = model
-        self.year = year
-        self.price = price
-        self.type = type
+        self.__brand = brand
+        self.__model = model
+        self.__year = year
+        self.__price = price
+        self.__type = type
 
     def get_brand(self):
-        return self.brand
+        return self.__brand
 
     def set_brand(self, brand):
-        self.brand = brand
+        self.__brand = brand
 
     def get_model(self):
-        return self.model
+        return self.__model
 
     def set_model(self, model):
-        self.model = model
+        self.__model = model
 
     def get_year(self):
-        return self.year
+        return self.__year
 
     def set_year(self, year):
-        self.year = year
+        self.__year = year
 
     def get_price(self):
-        return self.price
+        return self.__price
 
     def set_price(self, price):
-        self.price = price
+        self.__price = price
 
     def get_type(self):
-        return self.type
+        return self.__type
 
     def set_type(self, type):
-        self.type = type
+        self.__type = type
 
     def print_info(self):
-        return f"{self.make} {self.model} {self.year} {self.price} {self.type}"
+        return f"{self.__brand} {self.__model} {self.__year} {float(self.__price):,.2f} {self.__type}"
