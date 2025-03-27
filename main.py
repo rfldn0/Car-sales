@@ -5,6 +5,7 @@
 #imports
 from ImportCar import import_car as i_car
 from DomesticCar import domestic_car as d_car
+from Car import Car
 
 
 def display_cars(cars_category, title): 
@@ -38,13 +39,26 @@ def numbers(domestics, imports):
     print(f"Number of domestic cars = {len(domestics)}")
     print(f"Total = {len(imports) + len(domestics)}\n")
 
+def calculate_total_price(cars):
+    total_price = 0
+    for car in cars:
+        sales_price = car.get_price() * 1.06
+
+        if isinstance(car, i_car):
+            total_price += sales_price * (1 + car.get_tax()/100)
+        else:
+            total_price += sales_price
+
+    return total_price
+
 def filter_price(price, domestics, imports): 
     cars = domestics + imports
-    total_price = 0 
+    total_price = 0
 
-    for car in cars: 
-        total_price = total_price + car.get_price()
-        
+    #calculate total price
+    total_price = calculate_total_price(cars)
+
+
     print(f"Filter price less than: {price}")
     # Filter and sort at the same time
     filtered_sorted = sorted(
@@ -121,7 +135,7 @@ def main():
 
 
    except FileNotFoundError:
-       print("File not found")
+       print("File not found!")
 
 
 
