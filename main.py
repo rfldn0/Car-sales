@@ -1,3 +1,8 @@
+# Project No.:  Project 04
+# Author: Victor R Tabuni
+# Description: Cars, inheritance, polymorphism, overriding, 
+
+#imports
 from ImportCar import import_car as i_car
 from DomesticCar import domestic_car as d_car
 from Car import Car as cars
@@ -35,16 +40,20 @@ def numbers(domestics, imports):
 
 def filter_price(price, domestics, imports): 
     cars = domestics + imports
-    filtered_cars = []
+    
 
     print(f"Filter price less than: {price}")
-    for car in cars: 
-        if car[3]< price:
-            filtered_cars.append(car) 
-
-    f
-
+    # Filter and sort at the same time
+    filtered_sorted = sorted(
+        [car for car in cars if car.get_price() < price], 
+        key=lambda x: x.get_price(),
+        reverse=True  # Ascending order (set to True for descending order) IDK what happened, when I set it to True it sorted in ascending order
+    )
     
+    # Output the filtered and sorted list
+    for car in filtered_sorted:
+        print(car.print_info())
+
 
 def main():
    dom_cars = []

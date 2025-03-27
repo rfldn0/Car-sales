@@ -1,4 +1,8 @@
 
+# Project No.:  Project 04
+# Author: Victor R Tabuni
+# Description: Cars, inheritance, polymorphism, overriding, 
+
 class Car:
     def __init__(self, brand, model, year, price, type):
         self.__brand = brand
