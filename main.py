@@ -40,8 +40,11 @@ def numbers(domestics, imports):
 
 def filter_price(price, domestics, imports): 
     cars = domestics + imports
-    
+    total_price = 0 
 
+    for car in cars: 
+        total_price = total_price + car.get_price()
+        
     print(f"Filter price less than: {price}")
     # Filter and sort at the same time
     filtered_sorted = sorted(
@@ -50,9 +53,15 @@ def filter_price(price, domestics, imports):
         reverse=True  # Ascending order (set to True for descending order) IDK what happened, when I set it to True it sorted in ascending order
     )
     
+    
     # Output the filtered and sorted list
     for car in filtered_sorted:
+        print(total_price)
         print(car.print_info())
+    
+    # the amount of cars
+    print(f"Number of cars: {len(filtered_sorted)}")
+    print(f"Total price of cars in the Stock: ${total_price:,.2f}")
 
 
 def main():
@@ -90,6 +99,7 @@ def main():
 
        #print the filtered cars
        filter_price(15000.0, dom_cars, imp_cars)
+
 
    except FileNotFoundError:
        print("File not found")
