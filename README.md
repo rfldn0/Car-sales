@@ -1,6 +1,5 @@
-Here's a formatted version of your project description for a `README.md` file:
 
-```markdown
+
 # CS/CYCS1120 (Python) – Fall 2022  
 ## Programming Project #4  
 
