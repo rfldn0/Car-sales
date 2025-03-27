@@ -5,7 +5,7 @@
 #imports
 from ImportCar import import_car as i_car
 from DomesticCar import domestic_car as d_car
-from Car import Car as cars
+
 
 def display_cars(cars_category, title): 
     print(title)
@@ -56,7 +56,6 @@ def filter_price(price, domestics, imports):
     
     # Output the filtered and sorted list
     for car in filtered_sorted:
-        print(total_price)
         print(car.print_info())
     
     # the amount of cars
@@ -70,7 +69,12 @@ def main():
 
    try:
        
-       read_data(dom_cars, imp_cars, "carsInStock.txt")
+       print("Welcome to Domestic/Imported Cars Application")
+       print("\nStep One: ")
+       filename = input("Please enter a file name (with information about Cars in Stock): ") 
+       print(f"Input file name for Cars in Stock: {filename}")
+       
+       read_data(dom_cars, imp_cars, filename)
        write_data(dom_cars, imp_cars, "carsCategoryWise.txt")
 
        #read the file from carsCategoryWise and present them on CLI
@@ -79,9 +83,24 @@ def main():
 
        #numbers 
        numbers(dom_cars, imp_cars)
+
+       #STEP 2
+       print("Step Two")
+       file2 = input("Please enter a file name (with information about Cars expected to arrive): ")
+       print(f"Input file name for Cars expected to arrive: {file2}\n")
        #add the cars from carsExpectedToArrive.txt file to the existing list
        read_data(dom_cars, imp_cars, "carsExpectedToArrive.txt")
+       
+       #display the new cars appended 
+       display_cars(imp_cars, "Imported Cars: ")
+       display_cars(dom_cars, "Domestic Cars: ")
 
+       #numbers
+       numbers(dom_cars, imp_cars)
+
+       #STEP 3
+       
+       print("Step Three\n")
        #update price and tax 
        for car in imp_cars: 
            car.additional_tax()
