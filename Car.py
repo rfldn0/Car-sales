@@ -4,7 +4,7 @@ class Car:
         self.__brand = brand
         self.__model = model
         self.__year = year
-        self.__price = price
+        self.__price = float(price)
         self.__type = type
 
     def get_brand(self):
@@ -38,4 +38,4 @@ class Car:
         self.__type = type
 
     def print_info(self):
-        return f"{self.__brand} {self.__model} {self.__year} {float(self.__price):,.2f} {self.__type}"
+        return f"{self.__brand:<10} {self.__model:<12} {self.__year:<6} {self.__price:,.2f}   {self.__type:<8}"

@@ -1,11 +1,11 @@
 Imported Cars: 
-Toyota Camry 2014 20,000.00 Sedan Japan 10% 
-BMW 325i 2013 30,000.00 Sedan Germany 8% 
-Toyota LexusRX30 2015 42,000.00 Sedan Japan 10% 
+Toyota     Camry        2014   20,000.00   Sedan    Japan      10% 
+BMW        325i         2013   30,000.00   Sedan    Germany    8% 
+Toyota     LexusRX30    2015   42,000.00   Sedan    Japan      10% 
 
 Domestic Cars: 
-Ford F150 2012 17,000.00 Truck MI 
-Chrysler Pacifica 2013 18,000.00 Sedan TX 
-Chevrolet TahoeLS 2010 7,000.00 Coup TX 
-Chevrolet Silverado 2011 10,000.00 Van MI 
-Ford Econoline 2012 16,000.00 Sedan MI 
+Ford       F150         2012   17,000.00   Truck    MI    
+Chrysler   Pacifica     2013   18,000.00   Sedan    TX    
+Chevrolet  TahoeLS      2010   7,000.00   Coup     TX    
+Chevrolet  Silverado    2011   10,000.00   Van      MI    
+Ford       Econoline    2012   16,000.00   Sedan    MI    

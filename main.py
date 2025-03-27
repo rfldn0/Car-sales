@@ -1,9 +1,10 @@
 from ImportCar import import_car as i_car
 from DomesticCar import domestic_car as d_car
+from Car import Car as cars
 
 def display_cars(cars_category, title): 
     print(title)
-    print("=" * 60)
+    print("=" * 60 + "\n")
     for cars_category in cars_category: 
         print(cars_category.print_info())
     print()
@@ -27,7 +28,23 @@ def write_data(domestic, imports, filename):
         for car in domestic:
             file.write(f"{car.print_info()} \n")
 
+def numbers(domestics, imports):
+    print(f"Number of imported cars = {len(imports)}")
+    print(f"Number of domestic cars = {len(domestics)}")
+    print(f"Total = {len(imports) + len(domestics)}\n")
 
+def filter_price(price, domestics, imports): 
+    cars = domestics + imports
+    filtered_cars = []
+
+    print(f"Filter price less than: {price}")
+    for car in cars: 
+        if car[3]< price:
+            filtered_cars.append(car) 
+
+    f
+
+    
 
 def main():
    dom_cars = []
@@ -43,12 +60,15 @@ def main():
        display_cars(dom_cars, "Domestic Cars: ")
 
        #numbers 
-       print(f"Number of imported cars = {len(imp_cars)}")
-       print(f"Number of domestic cars = {len(dom_cars)}")
-       print(f"Total = {len(imp_cars) + len(dom_cars)}")
-
+       numbers(dom_cars, imp_cars)
        #add the cars from carsExpectedToArrive.txt file to the existing list
        read_data(dom_cars, imp_cars, "carsExpectedToArrive.txt")
+
+       #update price and tax 
+       for car in imp_cars: 
+           car.additional_tax()
+       for car in dom_cars: 
+           car.update_price()
 
        #display the new cars appended 
        display_cars(imp_cars, "Imported Cars: ")
@@ -56,10 +76,14 @@ def main():
 
        """Note: this new appended cars have not yet been added to the carsCategoryWise.txt file"""
 
+       #numbers
+       numbers(dom_cars, imp_cars)
+
+       #print the filtered cars
+       filter_price(15000.0, dom_cars, imp_cars)
+
    except FileNotFoundError:
        print("File not found")
-
-
 
 
 
